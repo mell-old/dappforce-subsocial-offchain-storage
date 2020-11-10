@@ -19,7 +19,7 @@ type TableItem = {
 const parse = async () => {
   const dataArr = await csv().fromFile(CSV_PATH) as TableItem[]
   const mediumUrls = dataArr.map(({ Medium }) => Medium).filter(x => nonEmptyStr(x) && x !== '-')
-  log.info('Parsed medium urls: %o', mediumUrls)
+  log.info('Parsed medium urls: ', mediumUrls)
   const abouts = await parseMedium(mediumUrls)
 
   if (isEmptyArray(abouts)) throw abouts
@@ -27,6 +27,6 @@ const parse = async () => {
   writeFileSync(`medium.json`, JSON.stringify(abouts, null, 2))
 }
 
-parse().catch(err => log.error('Failed parse medium %o', err))
+parse().catch(err => log.error('Failed parse medium ', err))
   
 

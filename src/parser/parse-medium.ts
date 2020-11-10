@@ -59,8 +59,8 @@ export default function parseMedium (siteUrls: string[]) {
       return abouts;
     })
     .catch(err => {
-      const errorMsg = `Unexpected error occured while parsing site previews: ${err}`;
-      console.error(errorMsg);
+      const errorMsg = `Unexpected error occured while parsing site previews:`;
+      log.error(errorMsg, err);
       return { error: errorMsg };
     });
 }

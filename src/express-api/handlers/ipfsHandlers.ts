@@ -27,8 +27,7 @@ const getContentResponse = async (res: express.Response, cids: string[]) => {
     log.info(`${contents.length} content items loaded from IPFS`)
     res.json(contents)
   } catch (err) {
-    // console.log(err)
-    res.json(err)
+    res.json(err.stack)
   }
 }
 

@@ -36,7 +36,7 @@ export class IpfsClusterApi {
       const { version } = JSON.parse(res) || {}
       log.info('Connected to IPFS Cluster with version: %s', version)
     } catch (err) {
-      log.error('Failed to connect to IPFS cluster: %o', err)
+      log.error('Failed to connect to IPFS cluster: ', err.stack)
     }
   }
 
@@ -104,7 +104,7 @@ export class IpfsClusterApi {
       log.debug('Content added and pinned under CID: %s', cid)
       return cid
     } catch (err) {
-      log.error('Failed to add content to IPFS: %o', err)
+      log.error('Failed to add content to IPFS: ', err.stack)
       return undefined
     }
   }
@@ -129,7 +129,7 @@ export class IpfsClusterApi {
       await this.ipfsClusterRequest('unpin', cid)
       log.debug(`Unpinned content with CID: ${cid}`)
     } catch (err) {
-      log.error(`Failed to unpin content with CID '${cid}'. Error: %o`, err)
+      log.error(`Failed to unpin content with CID '${cid}'. Error: `, err.stack)
     }
   }
 }

@@ -23,7 +23,7 @@ export const resolvePromiseAndReturnJson = async (
     const data = await promise
     res.json(data)
   } catch (err) {
-    expressApiLog.error(err)
+    expressApiLog.error(err.stack)
     res.status(err.statusCode).send(err)
   }
 }

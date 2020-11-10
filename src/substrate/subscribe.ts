@@ -109,7 +109,7 @@ async function main (substrate: SubsocialSubstrateApi) {
       const { event } = events[i]
 
       if (shouldHandleEvent(event)) {
-        log.debug(`Handle a new event: %o`, event.method)
+        log.debug(`Handle a new event: `, event.method)
         // 773059
         const eventMeta = {
           eventName: event.method,

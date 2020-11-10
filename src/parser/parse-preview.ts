@@ -178,7 +178,7 @@ export default function parse (siteUrls: string[]) {
     })
     .catch(err => {
       const errorMsg = `Unexpected error occured while parsing site previews: ${err}`;
-      console.error(errorMsg);
+      log.error(errorMsg);
       return { error: errorMsg };
     });
 }

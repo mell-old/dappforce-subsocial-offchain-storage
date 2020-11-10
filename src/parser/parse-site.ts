@@ -55,7 +55,7 @@ export function parseSiteWithRequest (url: string, parseFn: ParseFn): Promise<Pa
           errorMessage = `Unexpected HTTP status code at URL [${url}]. HTTP error: ${res.statusCode}`;
         }
 
-        console.error(errorMessage);
+        log.error(errorMessage);
 
         // TODO Use reject() here? yes
         resolve({ ok: false, error: errorMessage });
