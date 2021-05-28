@@ -76,6 +76,7 @@ export const tokenDropHandler: HandlerFn = async (req, res) => {
 }
 
 export const getFaucetStatus: HandlerFn = async (req, res) => {
+  console.log('getFaucetStatus', req.query.account)
   const account = asAccountId(req.query.account as string).toString()
 
   const { ok, errors } = await checkFaucetIsActive(account)

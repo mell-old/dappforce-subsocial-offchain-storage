@@ -83,6 +83,7 @@
     "node-cron": "^2.0.3",
     "nodemailer": "^6.4.17",
     "pg": "^8.5.1",
+    "remark": "^13.0.0",
     "request-promise": "^4.2.5",
     "ts-jest": "^26.4.4",
     "uuid": "^8.3.2",
